@@ -158,7 +158,7 @@ const handleNewList = () => {
 //Process
 
 countList();
-addBtn.addEventListener("click", () =>handleNewList());
+addBtn.addEventListener("click", handleNewList);
 
 textInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
