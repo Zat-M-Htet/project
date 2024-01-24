@@ -138,9 +138,7 @@ const createList = (textList) => {
   return list;
 };
 
-//Process
-countList();
-addBtn.addEventListener("click", () => {
+const handleNewList = () => {
   const list = createList(textInput.value);
   lists.append(list);
 
@@ -155,8 +153,18 @@ addBtn.addEventListener("click", () => {
   countList();
 
   textInput.value = null;
-});
+}
 
+//Process
+
+countList();
+addBtn.addEventListener("click", () =>handleNewList());
+
+textInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    handleNewList();
+  }
+});
 // const obj ={
 //   a: "aaa",
 //   b: "bbb",
